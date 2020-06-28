@@ -5,13 +5,19 @@
 import https from 'https';
 
 /**
+ * @name requestBody
+ * @description request body
+ */
+type requestBody = {
+  key: string;
+  value: string;
+};
+
+/**
  * @name httpRequest
  * @description send HTTP request
  */
-const httpRequest = (
-  options: https.RequestOptions,
-  requestBody?: string
-) => {
+const httpRequest = (options: https.RequestOptions, requestBody?: string) => {
   return new Promise((resolve, reject) => {
     const req: any = https.request(options, (res) => {
       const queue: Buffer[] = [];
@@ -31,15 +37,6 @@ const httpRequest = (
     }
     req.end();
   });
-};
-
-/**
- * @name requestBody
- * @description request body
- */
-type requestBody = {
-  key: string;
-  value: string;
 };
 
 /**
