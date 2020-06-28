@@ -4,11 +4,11 @@ This package is responsible for the common features of the heat-sfdx series.
 
 ## heat-sfdx series
 
-| category     | package                |
-| :----------- | :--------------------- |
-| Metadata API | [head-sfdx-metadata]() |
-| Tooling API  | [head-sfdx-tooling]()  |
-| Common       | [head-sfdx-common]()   |
+| category     | package                                                                      |
+| :----------- | :--------------------------------------------------------------------------- |
+| Metadata API | [head-sfdx-metadata](https://github.com/takahitomiyamoto/heat-sfdx-metadata) |
+| Tooling API  | [head-sfdx-tooling](https://github.com/takahitomiyamoto/heat-sfdx-tooling)   |
+| Common       | [head-sfdx-common](https://github.com/takahitomiyamoto/heat-sfdx-common)     |
 
 ## How to install
 
@@ -39,7 +39,7 @@ yarn add --dev --exact @takahitomiyamoto/heat-sfdx-common --update-checksums
 | emoji      | definition                           |
 | :--------- | :----------------------------------- |
 | :recycle:  | refactored anything                  |
-| :bug:      | fixed any bug                        |
+| :bug:      | fixed any bugs                        |
 | :+1:       | improved any features                |
 | :sparkles: | added any features                   |
 | :fire:     | removed any features                 |
