@@ -24,6 +24,30 @@ yarn add --dev --exact @takahitomiyamoto/heat-sfdx-common --update-checksums
 
 login with JWT Bearer Flow
 
+Example:
+
+```js
+import { loginJwt } from 'heat-sfdx-common';
+
+const loginResult = await loginJwt({
+  privateKey: environment.secrets.privateKey,
+  clientId: environment.secrets.clientId,
+  username: environment.secrets.username,
+  hostname: environment.secrets.hostname
+});
+console.log(loginResult);
+```
+
+```json
+{
+  "accessToken": "xxxxxxxxxxxxxxxxxxxx",
+  "scope": "web api",
+  "instanceUrl": "https://xxxxx.my.salesforce.com",
+  "id": "https://login.salesforce.com/id/00Dxxxxxxxxxxxxxxx/005xxxxxxxxxxxxxxx",
+  "tokenType": "Bearer"
+}
+```
+
 > [src/auth.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/auth.ts#L112)
 
 ### https
@@ -45,7 +69,7 @@ send HTTP request
 | emoji      | definition                           |
 | :--------- | :----------------------------------- |
 | :recycle:  | refactored anything                  |
-| :bug:      | fixed any bugs                        |
+| :bug:      | fixed any bugs                       |
 | :+1:       | improved any features                |
 | :sparkles: | added any features                   |
 | :fire:     | removed any features                 |
