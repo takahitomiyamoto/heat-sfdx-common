@@ -1,35 +1,46 @@
 # heat-sfdx-common
 
-この package は heat-sfdx series のうち、汎用的な機能を担当します。
+This package is responsible for the common features of the heat-sfdx series.
 
 ## heat-sfdx series
 
-| category        | package                |
-| :-------------- | :--------------------- |
-| 認証認可系      | [head-sfdx-auth]()     |
-| Metadata API 系 | [head-sfdx-metadata]() |
-| Tooling API 系  | [head-sfdx-tooling]()  |
-| その他          | [head-sfdx-common]()   |
+| category     | package                |
+| :----------- | :--------------------- |
+| Metadata API | [head-sfdx-metadata]() |
+| Tooling API  | [head-sfdx-tooling]()  |
+| Common       | [head-sfdx-common]()   |
 
 ## How to install
 
 ```sh
-yarn add --dev --exact heat-sfdx-common
+yarn add --dev --exact @takahitomiyamoto/heat-sfdx-common --update-checksums
 ```
 
 ## Reference
 
-### httpRequest
+### auth
 
-### requestBody2String
+#### loginJwt
+
+> login with JWT Bearer Flow
+
+### https
+
+#### httpRequest
+
+> send HTTP request
+
+#### requestBody2String
+
+> `[{key: k1, value: v1}, {key: k2, value: v2}, ... ]` => `k1=v1&k2=v2&...`
 
 ## Emoji
 
-| emoji      | definition               |
-| :--------- | :----------------------- |
-| :recycle:  | リファクタリングした場合 |
-| :bug:      | バグを修正した場合       |
-| :+1:       | 機能を改善した場合       |
-| :sparkles: | 機能を追加した場合       |
-| :fire:     | 機能を削除した場合       |
-| :tada:     | 機能を大きく変更した場合 |
+| emoji      | definition                           |
+| :--------- | :----------------------------------- |
+| :recycle:  | refactored anything                  |
+| :bug:      | fixed any bug                        |
+| :+1:       | improved any features                |
+| :sparkles: | added any features                   |
+| :fire:     | removed any features                 |
+| :tada:     | made a major change for any features |
