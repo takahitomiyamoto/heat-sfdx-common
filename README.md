@@ -22,17 +22,23 @@ yarn add --dev --exact @takahitomiyamoto/heat-sfdx-common --update-checksums
 
 #### loginJwt
 
-> login with JWT Bearer Flow
+login with JWT Bearer Flow
+
+> [src/auth.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/auth.ts#L112)
 
 ### https
 
 #### httpRequest
 
-> send HTTP request
+send HTTP request
+
+> [src/https.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/https.ts#L20)
 
 #### requestBody2String
 
-> `[{key: k1, value: v1}, {key: k2, value: v2}, ... ]` => `k1=v1&k2=v2&...`
+`[{key: k1, value: v1}, {key: k2, value: v2}, ... ]` => `k1=v1&k2=v2&...`
+
+> [src/https.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/https.ts#L46)
 
 ## Emoji
 
