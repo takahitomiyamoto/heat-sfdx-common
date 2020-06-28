@@ -54,4 +54,4 @@ const requestBody2String = (params: requestBody[]): string => {
   return body.join('&');
 };
 
-export { httpRequest, requestBody2String };
+export { httpRequest, requestBody, requestBody2String };
