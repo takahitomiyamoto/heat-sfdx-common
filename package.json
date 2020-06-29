@@ -1,10 +1,11 @@
 {
-  "name": "heat-sfdx-common",
+  "name": "@takahitomiyamoto/heat-sfdx-common",
   "version": "0.0.1",
   "license": "MIT",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
+  "repository": "git://github.com/takahitomiyamoto/heat-sfdx-common.git",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
