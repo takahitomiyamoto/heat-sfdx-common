@@ -17,7 +17,10 @@ type requestBody = {
  * @name httpRequest
  * @description send HTTP request
  */
-const httpRequest = (options: https.RequestOptions, requestBody?: string) => {
+const httpRequest = (
+  options: https.RequestOptions,
+  requestBody?: string
+): Promise<any> => {
   return new Promise((resolve, reject) => {
     const req: any = https.request(options, (res) => {
       const queue: Buffer[] = [];
