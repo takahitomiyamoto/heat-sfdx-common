@@ -22,12 +22,11 @@ yarn add --dev --exact @takahitomiyamoto/heat-sfdx-common --update-checksums
 
 > login with JWT Bearer Flow.
 
-#### params: authentication
-
-- privateKey: local path of a private key file for a certificate added to a connected app
-- clientId: consumer key in a connected app
-- username: username of a login user
-- hostname: hostname of a login URL
+- params: authentication
+  - privateKey: local path of a private key file for a certificate added to a connected app
+  - clientId: consumer key in a connected app
+  - username: username of a login user
+  - hostname: hostname of a login URL
 
 #### Example:
 
