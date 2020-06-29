@@ -23,10 +23,10 @@ yarn add --dev --exact @takahitomiyamoto/heat-sfdx-common --update-checksums
 > login with JWT Bearer Flow.
 
 - params: authentication
-  - privateKey: local path of a private key file for a certificate added to a connected app
-  - clientId: consumer key in a connected app
-  - username: username of a login user
-  - hostname: hostname of a login URL
+  - privateKey: string | local path of a private key file for a certificate added to a connected app
+  - clientId: string | consumer key in a connected app
+  - username: string | username for login
+  - hostname: string | hostname fot login
 
 #### Example:
 
@@ -58,26 +58,85 @@ console.log(JSON.parse(result));
 
 > [src/auth.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/auth.ts#L112)
 
-### httpRequest
+### httpRequest(options: https.RequestOptions, requestBody?: string): Promise\<any\>
 
-send HTTP request
+> send HTTP request
 
-Example:
+- options: https.RequestOptions
+  - hostname: string | hostname
+  - path: string | endpoint
+  - method: string | HTTP method
+  - headers: any | HTTP headers
+- requestBody: string | HTTP request body
+
+#### Example:
 
 ```js
 import { httpRequest } from 'heat-sfdx-common';
 
-const options = {};
-const bodyString = '';
+const options = {
+  hostname: 'login.salesforce.com',
+  path: '/services/oauth2/token',
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+};
+const bodyString =
+  'grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=xxxxxxxxxxxxxxxxxxxx';
 const result: any = await httpRequest(options, bodyString);
+
 console.log(JSON.parse(result));
 ```
 
+```json
+{
+  "accessToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "scope": "web api",
+  "instanceUrl": "https://xxxxx.my.salesforce.com",
+  "id": "https://login.salesforce.com/id/00Dxxxxxxxxxxxxxxx/005xxxxxxxxxxxxxxx",
+  "tokenType": "Bearer"
+}
+```
+
+#### Code:
+
 > [src/https.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/https.ts#L20)
 
-#### requestBody2String
+### requestBody2String(params: requestBody[]): string
 
-`[{key: k1, value: v1}, {key: k2, value: v2}, ... ]` => `k1=v1&k2=v2&...`
+> `[{key: k1, value: v1}, {key: k2, value: v2}, ... ]` => `k1=v1&k2=v2&...`
+
+- params: requestBody[]
+  - requestBody | HTTP request body
+    - key: string | key of HTTP request body
+    - value: string | value of HTTP request body
+
+#### Example:
+
+```js
+import { requestBody2String } from 'heat-sfdx-common';
+
+const bodies: requestBody[] = [
+  {
+    key: 'grant_type',
+    value: 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+  },
+  {
+    key: 'assertion',
+    value: 'xxxxxxxxxxxxxxxxxxxx'
+  }
+];
+const bodyString: string = requestBody2String(bodies);
+
+console.log(bodyString);
+```
+
+```sh
+grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=xxxxxxxxxxxxxxxxxxxx
+```
+
+#### Code:
 
 > [src/https.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/https.ts#L46)
 
