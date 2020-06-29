@@ -58,6 +58,8 @@ console.log(JSON.parse(result));
 
 > [src/auth.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/auth.ts#L112)
 
+<br>
+
 ### httpRequest(options: https.RequestOptions, requestBody?: string): Promise\<any\>
 
 > send HTTP request
@@ -103,6 +105,8 @@ console.log(JSON.parse(result));
 
 > [src/https.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/https.ts#L20)
 
+<br>
+
 ### requestBody2String(params: requestBody[]): string
 
 > `[{key: k1, value: v1}, {key: k2, value: v2}, ... ]` => `k1=v1&k2=v2&...`
@@ -139,6 +143,8 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=xxxxxxxxxxxxxxx
 #### Code:
 
 > [src/https.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/https.ts#L46)
+
+<br>
 
 ## Emoji
 
