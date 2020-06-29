@@ -18,7 +18,7 @@ yarn add --dev --exact @takahitomiyamoto/heat-sfdx-common --update-checksums
 
 ## Reference
 
-### loginJwt(params: authentication): Promise<string>
+### loginJwt(params: authentication): Promise\<string\>
 
 > login with JWT Bearer Flow.
 
