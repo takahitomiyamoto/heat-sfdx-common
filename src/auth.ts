@@ -57,20 +57,6 @@ type jwtClaim = {
 };
 
 /**
- * @name _setUserInfo
- * @description set UserInfo
- */
-const _setUserInfo = (result: any): userInfo => {
-  return {
-    accessToken: result.access_token,
-    scope: result.scope,
-    instanceUrl: result.instance_url,
-    id: result.id,
-    tokenType: result.token_type
-  };
-};
-
-/**
  * @name _setOptionsOauth2Token
  * @description set options for /services/oauth2/token
  */
@@ -106,6 +92,20 @@ const _createJwt = (params: authentication): string => {
 };
 
 /**
+ * @name _setUserInfo
+ * @description set UserInfo
+ */
+const _setUserInfo = (result: any): userInfo => {
+  return {
+    accessToken: result.access_token,
+    scope: result.scope,
+    instanceUrl: result.instance_url,
+    id: result.id,
+    tokenType: result.token_type
+  };
+};
+
+/**
  * @name loginJwt
  * @description login with JWT Bearer Flow
  */
@@ -123,6 +123,7 @@ async function loginJwt(params: authentication): Promise<string> {
   ];
   const bodyString: string = requestBody2String(bodies);
   const result: any = await httpRequest(options, bodyString);
+  console.log(JSON.parse(result));
   const userInfo = _setUserInfo(JSON.parse(result));
   return JSON.stringify(userInfo);
 }
