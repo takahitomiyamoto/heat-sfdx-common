@@ -57,10 +57,10 @@ type jwtClaim = {
 };
 
 /**
- * @name setUserInfo
+ * @name _setUserInfo
  * @description set UserInfo
  */
-const setUserInfo = (result: any): userInfo => {
+const _setUserInfo = (result: any): userInfo => {
   return {
     accessToken: result.access_token,
     scope: result.scope,
@@ -71,10 +71,10 @@ const setUserInfo = (result: any): userInfo => {
 };
 
 /**
- * @name setOptionsOauth2Token
+ * @name _setOptionsOauth2Token
  * @description set options for /services/oauth2/token
  */
-const setOptionsOauth2Token = (
+const _setOptionsOauth2Token = (
   params: authentication
 ): https.RequestOptions => {
   return {
@@ -88,10 +88,10 @@ const setOptionsOauth2Token = (
 };
 
 /**
- * @name createJwt
+ * @name _createJwt
  * @description create JWT
  */
-const createJwt = (params: authentication): string => {
+const _createJwt = (params: authentication): string => {
   const privateKey: string = fs.readFileSync(params.privateKey, {
     encoding: UTF8
   });
@@ -109,8 +109,8 @@ const createJwt = (params: authentication): string => {
  * @name loginJwt
  * @description login with JWT Bearer Flow
  */
-async function loginJwt(params: authentication) {
-  const options = setOptionsOauth2Token(params);
+async function loginJwt(params: authentication): Promise<string> {
+  const options = _setOptionsOauth2Token(params);
   const bodies: requestBody[] = [
     {
       key: 'grant_type',
@@ -118,12 +118,13 @@ async function loginJwt(params: authentication) {
     },
     {
       key: 'assertion',
-      value: createJwt(params)
+      value: _createJwt(params)
     }
   ];
   const bodyString: string = requestBody2String(bodies);
   const result: any = await httpRequest(options, bodyString);
-  return setUserInfo(JSON.parse(result));
+  const userInfo = _setUserInfo(JSON.parse(result));
+  return JSON.stringify(userInfo);
 }
 
 export { authorization, loginJwt };
