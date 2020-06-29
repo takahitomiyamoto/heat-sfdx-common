@@ -18,24 +18,27 @@ yarn add --dev --exact @takahitomiyamoto/heat-sfdx-common --update-checksums
 
 ## Reference
 
-### auth
+### loginJwt
 
-#### loginJwt
+> login with JWT Bearer Flow.
 
-login with JWT Bearer Flow
+- privateKey:
+- clientId:
+- username:
+- hostname:
 
-Example:
+#### Example:
 
 ```js
 import { loginJwt } from 'heat-sfdx-common';
 
-const loginResult = await loginJwt({
+const result = await loginJwt({
   privateKey: environment.secrets.privateKey,
   clientId: environment.secrets.clientId,
   username: environment.secrets.username,
   hostname: environment.secrets.hostname
 });
-console.log(loginResult);
+console.log(JSON.parse(result));
 ```
 
 ```json
@@ -50,11 +53,20 @@ console.log(loginResult);
 
 > [src/auth.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/auth.ts#L112)
 
-### https
-
-#### httpRequest
+### httpRequest
 
 send HTTP request
+
+Example:
+
+```js
+import { httpRequest } from 'heat-sfdx-common';
+
+const options = {};
+const bodyString = '';
+const result: any = await httpRequest(options, bodyString);
+console.log(JSON.parse(result));
+```
 
 > [src/https.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/https.ts#L20)
 
