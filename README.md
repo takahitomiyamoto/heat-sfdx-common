@@ -18,38 +18,44 @@ yarn add --dev --exact @takahitomiyamoto/heat-sfdx-common --update-checksums
 
 ## Reference
 
-### loginJwt
+### loginJwt(params: authentication): Promise<string>
 
 > login with JWT Bearer Flow.
 
-- privateKey:
-- clientId:
-- username:
-- hostname:
+#### params: authentication
+
+- privateKey: local path of a private key file for a certificate added to a connected app
+- clientId: consumer key in a connected app
+- username: username of a login user
+- hostname: hostname of a login URL
 
 #### Example:
 
 ```js
 import { loginJwt } from 'heat-sfdx-common';
 
-const result = await loginJwt({
-  privateKey: environment.secrets.privateKey,
-  clientId: environment.secrets.clientId,
-  username: environment.secrets.username,
-  hostname: environment.secrets.hostname
-});
+const params: authentication = {
+  privateKey: '.secrets/server.key',
+  clientId: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+  username: 'admin@heat-sfdx-common.com',
+  hostname: 'login.salesforce.com'
+};
+const result = await loginJwt(params);
+
 console.log(JSON.parse(result));
 ```
 
 ```json
 {
-  "accessToken": "xxxxxxxxxxxxxxxxxxxx",
+  "accessToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "scope": "web api",
   "instanceUrl": "https://xxxxx.my.salesforce.com",
   "id": "https://login.salesforce.com/id/00Dxxxxxxxxxxxxxxx/005xxxxxxxxxxxxxxx",
   "tokenType": "Bearer"
 }
 ```
+
+#### Code:
 
 > [src/auth.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/auth.ts#L112)
 
