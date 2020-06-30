@@ -1,7 +1,6 @@
 ![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 [![npm version](https://badge.fury.io/js/heat-sfdx-common.svg)](https://badge.fury.io/js/heat-sfdx-common)
 [![dependencies status](https://david-dm.org/takahitomiyamoto/heat-sfdx-common.svg)](https://david-dm.org/takahitomiyamoto/heat-sfdx-common)
-![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/takahitomiyamoto/heat-sfdx-common)
 [![devDependency status](https://david-dm.org/takahitomiyamoto/heat-sfdx-common/dev-status.svg)](https://david-dm.org/takahitomiyamoto/heat-sfdx-common#info=devDependencies)
 [![Code Climate](https://codeclimate.com/github/takahitomiyamoto/heat-sfdx-common.svg)](https://codeclimate.com/github/takahitomiyamoto/heat-sfdx-common)
 
