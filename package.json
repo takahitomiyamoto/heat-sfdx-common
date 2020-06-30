@@ -5,7 +5,9 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "repository": "git://github.com/takahitomiyamoto/heat-sfdx-common.git",
+  "repository": {
+    "url": "git@github.com:takahitomiyamoto/heat-sfdx-common.git"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
