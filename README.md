@@ -1,7 +1,9 @@
 ![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 [![npm version](https://badge.fury.io/js/heat-sfdx-common.svg)](https://badge.fury.io/js/heat-sfdx-common)
-[![dependency status](https://david-dm.org/takahitomiyamoto/heat-sfdx-common.svg)](https://david-dm.org/takahitomiyamoto/heat-sfdx-common)
+[![dependencies status](https://david-dm.org/takahitomiyamoto/heat-sfdx-common.svg)](https://david-dm.org/takahitomiyamoto/heat-sfdx-common)
+[![Dependencies Status](https://david-dm.org/takahitomiyamoto/heat-sfdx-common/status.svg?path=eform-client)](https://david-dm.org/takahitomiyamoto/heat-sfdx-common?path=eform-client)
 [![devDependency status](https://david-dm.org/takahitomiyamoto/heat-sfdx-common/dev-status.svg)](https://david-dm.org/takahitomiyamoto/heat-sfdx-common#info=devDependencies)
+[![Dependencies Status](https://david-dm.org/takahitomiyamoto/heat-sfdx-common/dev-status.svg?path=eform-client)](https://david-dm.org/takahitomiyamoto/heat-sfdx-common?path=eform-client&type=dev)
 [![Code Climate](https://codeclimate.com/github/takahitomiyamoto/heat-sfdx-common.svg)](https://codeclimate.com/github/takahitomiyamoto/heat-sfdx-common)
 
 # heat-sfdx-common
