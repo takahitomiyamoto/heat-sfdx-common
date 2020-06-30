@@ -12,9 +12,9 @@ This package is responsible for the common features of the heat-sfdx series.
 
 | category     | package                                                                      |
 | :----------- | :--------------------------------------------------------------------------- |
-| Metadata API | [head-sfdx-metadata](https://github.com/takahitomiyamoto/heat-sfdx-metadata) |
-| Tooling API  | [head-sfdx-tooling](https://github.com/takahitomiyamoto/heat-sfdx-tooling)   |
-| Common       | [head-sfdx-common](https://github.com/takahitomiyamoto/heat-sfdx-common)     |
+| Metadata API | [heat-sfdx-metadata](https://github.com/takahitomiyamoto/heat-sfdx-metadata) |
+| Tooling API  | [heat-sfdx-tooling](https://github.com/takahitomiyamoto/heat-sfdx-tooling)   |
+| Common       | [heat-sfdx-common](https://github.com/takahitomiyamoto/heat-sfdx-common)     |
 
 ## How to install
 
