@@ -1,6 +1,6 @@
 {
-  "name": "@takahitomiyamoto/heat-sfdx-common",
-  "version": "0.0.6",
+  "name": "heat-sfdx-common",
+  "version": "0.1.0",
   "author": "takahitomiyamoto",
   "license": "MIT",
   "bugs": {
