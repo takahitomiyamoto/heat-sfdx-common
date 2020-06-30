@@ -1,7 +1,12 @@
 {
   "name": "@takahitomiyamoto/heat-sfdx-common",
-  "version": "0.0.4",
+  "version": "0.0.5",
+  "author": "takahitomiyamoto",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takahitomiyamoto/heat-sfdx-common/issues"
+  },
+  "homepage": "https://github.com/takahitomiyamoto/heat-sfdx-common#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

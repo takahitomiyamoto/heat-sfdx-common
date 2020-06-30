@@ -1,3 +1,5 @@
+![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)
+
 # heat-sfdx-common
 
 This package is responsible for the common features of the heat-sfdx series.
