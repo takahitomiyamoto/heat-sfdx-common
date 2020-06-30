@@ -15,7 +15,7 @@ This package is responsible for the common features of the heat-sfdx series.
 ## How to install
 
 ```sh
-yarn add --dev --exact @takahitomiyamoto/heat-sfdx-common --update-checksums
+yarn add --dev --exact heat-sfdx-common --update-checksums
 ```
 
 ## Reference
