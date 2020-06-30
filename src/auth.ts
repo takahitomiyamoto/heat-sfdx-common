@@ -123,7 +123,6 @@ async function loginJwt(params: authentication): Promise<string> {
   ];
   const bodyString: string = requestBody2String(bodies);
   const result: any = await httpRequest(options, bodyString);
-  console.log(JSON.parse(result));
   const userInfo = _setUserInfo(JSON.parse(result));
   return JSON.stringify(userInfo);
 }
