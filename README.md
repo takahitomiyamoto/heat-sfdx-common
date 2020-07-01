@@ -13,6 +13,7 @@ This package is responsible for the common features of the heat-sfdx series.
 | category     | package                                                                      |
 | :----------- | :--------------------------------------------------------------------------- |
 | Metadata API | [heat-sfdx-metadata](https://github.com/takahitomiyamoto/heat-sfdx-metadata) |
+| SOAP API     | [heat-sfdx-soap](https://github.com/takahitomiyamoto/heat-sfdx-soap)         |
 | Tooling API  | [heat-sfdx-tooling](https://github.com/takahitomiyamoto/heat-sfdx-tooling)   |
 | Common       | [heat-sfdx-common](https://github.com/takahitomiyamoto/heat-sfdx-common)     |
 
@@ -23,6 +24,10 @@ yarn add --dev --exact heat-sfdx-common --update-checksums
 ```
 
 ## Reference
+
+- [loginJwt](https://github.com/takahitomiyamoto/heat-sfdx-common#loginjwtparams-authentication-promisestring)
+- [httpRequest](https://github.com/takahitomiyamoto/heat-sfdx-common#httprequestoptions-httpsrequestoptions-requestbody-string-promiseany)
+- [requestBody2String](https://github.com/takahitomiyamoto/heat-sfdx-common#requestbody2stringparams-requestbody-string)
 
 ### loginJwt(params: authentication): Promise\<string\>
 
