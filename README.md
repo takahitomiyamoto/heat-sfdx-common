@@ -157,6 +157,28 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=xxxxxxxxxxxxxxx
 
 <br>
 
+### json2xml(json: any): string
+
+> convert JSON to XML
+
+- json: any
+
+#### Example:
+
+```js
+import { json2xml } from 'heat-sfdx-common';
+```
+
+```sh
+
+```
+
+#### Code:
+
+> [src/xml.ts](https://github.com/takahitomiyamoto/heat-sfdx-common/blob/master/src/xml.ts)
+
+<br>
+
 ## Emoji
 
 | emoji      | definition                           |
