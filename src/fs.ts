@@ -8,7 +8,7 @@ const UTF8 = 'utf8';
 
 /**
  * @name readFileSyncUtf8
- * @description readFileSync with encoding: Utf8
+ * @description readFileSync with encoding UTF-8
  */
 const readFileSyncUtf8 = (path: string) => {
   return fs.readFileSync(path, {
@@ -18,7 +18,7 @@ const readFileSyncUtf8 = (path: string) => {
 
 /**
  * @name readdirSyncUtf8
- * @description readdirSync with encoding: Utf8
+ * @description readdirSync with encoding UTF-8
  */
 const readdirSyncUtf8 = (path: fs.PathLike) => {
   return fs.readdirSync(path, {
@@ -29,7 +29,7 @@ const readdirSyncUtf8 = (path: fs.PathLike) => {
 
 /**
  * @name writeFileSyncUtf8
- * @description writeFileSync with encoding: Utf8
+ * @description writeFileSync with encoding UTF-8
  */
 const writeFileSyncUtf8 = (path: string, data: string) => {
   fs.writeFileSync(path, data, {
