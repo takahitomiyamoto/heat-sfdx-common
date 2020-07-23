@@ -10,6 +10,9 @@ import { https, httpRequest } from './https';
  * @description set options /services/data/vXX.X/query/?q=[query]
  */
 const _setOptionsQuery = (params: authorization): https.RequestOptions => {
+  if (!params.instanceUrl) {
+    console.error('NOT FOUND - instanceUrl');
+  }
   const hostname = params.instanceUrl.replace('https://', '');
   return {
     hostname: hostname,
