@@ -11,7 +11,7 @@ import { https, httpRequest } from './https';
  */
 const _setOptionsQuery = (params: authorization): https.RequestOptions => {
   if (!params.instanceUrl) {
-    console.error('NOT FOUND - instanceUrl');
+    throw new Error('NOT FOUND - instanceUrl');
   }
   const hostname = params.instanceUrl.replace('https://', '');
   return {
