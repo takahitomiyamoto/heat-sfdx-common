@@ -6,6 +6,7 @@ import { authorization, loginJwt } from './auth';
 import { httpRequest, requestBody2String } from './https';
 import { json2xml } from './xml';
 import { readFileSyncUtf8, readdirSyncUtf8, writeFileSyncUtf8 } from './fs';
+import { query } from './query';
 
 export {
   authorization,
@@ -15,5 +16,6 @@ export {
   json2xml,
   readFileSyncUtf8,
   readdirSyncUtf8,
-  writeFileSyncUtf8
+  writeFileSyncUtf8,
+  query
 };
