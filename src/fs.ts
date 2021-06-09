@@ -52,3 +52,11 @@ export const existsSync = (path: string) => {
 export const rmdirSync = (path: string, options: any) => {
   return fs.rmdirSync(path, options);
 };
+
+/**
+ * @name mkdirSync
+ * @description mkdirSync
+ */
+export const mkdirSync = (path: string) => {
+  return fs.mkdirSync(path);
+};

@@ -7,6 +7,7 @@ import { httpRequest, requestBody2String } from './https';
 import { json2xml } from './xml';
 import {
   existsSync,
+  mkdirSync,
   readFileSyncUtf8,
   readdirSyncUtf8,
   rmdirSync,
@@ -21,6 +22,7 @@ export {
   requestBody2String,
   json2xml,
   existsSync,
+  mkdirSync,
   readFileSyncUtf8,
   readdirSyncUtf8,
   rmdirSync,
