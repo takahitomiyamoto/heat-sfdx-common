@@ -44,3 +44,11 @@ export const writeFileSyncUtf8 = (path: string, data: string) => {
 export const existsSync = (path: string) => {
   return fs.existsSync(path);
 };
+
+/**
+ * @name rmdirSync
+ * @description rmdirSync
+ */
+export const rmdirSync = (path: string, options: any) => {
+  return fs.rmdirSync(path, options);
+};

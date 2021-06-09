@@ -9,6 +9,7 @@ import {
   existsSync,
   readFileSyncUtf8,
   readdirSyncUtf8,
+  rmdirSync,
   writeFileSyncUtf8
 } from './fs';
 import { query } from './query';
@@ -22,6 +23,7 @@ export {
   existsSync,
   readFileSyncUtf8,
   readdirSyncUtf8,
+  rmdirSync,
   writeFileSyncUtf8,
   query
 };
