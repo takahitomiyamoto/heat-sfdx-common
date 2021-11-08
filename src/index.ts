@@ -11,6 +11,7 @@ import {
   readFileSyncUtf8,
   readdirSyncUtf8,
   rmdirSync,
+  rmSync,
   writeFileSyncUtf8
 } from './fs';
 import { query } from './query';
@@ -26,6 +27,7 @@ export {
   readFileSyncUtf8,
   readdirSyncUtf8,
   rmdirSync,
+  rmSync,
   writeFileSyncUtf8,
   query
 };

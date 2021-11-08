@@ -54,6 +54,14 @@ export const rmdirSync = (path: string, options: any) => {
 };
 
 /**
+ * @name rmSync
+ * @description rmSync
+ */
+export const rmSync = (path: string, options: any) => {
+  return fs.rmSync(path, options);
+};
+
+/**
  * @name mkdirSync
  * @description mkdirSync
  */
