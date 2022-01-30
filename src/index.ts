@@ -4,7 +4,7 @@
  */
 import { authorization, loginJwt } from './auth';
 import { httpRequest, requestBody2String } from './https';
-import { json2xml } from './xml';
+import { json2xml, xml2json } from './xml';
 import {
   existsSync,
   mkdirSync,
@@ -22,6 +22,7 @@ export {
   httpRequest,
   requestBody2String,
   json2xml,
+  xml2json,
   existsSync,
   mkdirSync,
   readFileSyncUtf8,
