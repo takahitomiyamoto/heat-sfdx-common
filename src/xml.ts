@@ -8,8 +8,19 @@ import xml2js from 'xml2js';
  * @name json2xml
  * @description convert JSON to XML
  */
-const json2xml = (json: any): string => {
+export const json2xml = (json: any): string => {
   return new xml2js.Builder().buildObject(json);
 };
 
-export { json2xml };
+/**
+ * @name xml2json
+ * @description convert XML to JSON
+ */
+export const xml2json = (xml: any): any => {
+  xml2js.parseString(xml, (err, result) => {
+    if (err) {
+      console.error(err.message);
+    }
+    return result;
+  });
+};
