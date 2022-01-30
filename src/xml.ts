@@ -16,11 +16,13 @@ export const json2xml = (json: any): string => {
  * @name xml2json
  * @description convert XML to JSON
  */
-export const xml2json = (xml: any): any => {
-  xml2js.parseString(xml, (err, result) => {
-    if (err) {
-      console.error(err.message);
-    }
-    return result;
+export async function xml2json(xml: any) {
+  return new Promise((resolve, reject) => {
+    xml2js.parseString(xml, (err, ret) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(ret);
+    });
   });
-};
+}
