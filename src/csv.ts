@@ -10,12 +10,17 @@ import { parse } from 'csv-parse';
 /**
  * @name json2csv
  * @description convert JSON to CSV
- * @param json JSON object
+ * @param jsonString JSON string
  * @param csvName CSV file name
  * @param hasHeader set true if the csv has a header
  */
-export async function json2csv(json: any, csvName: string, hasHeader: boolean) {
+export async function json2csv(
+  jsonString: string,
+  csvName: string,
+  hasHeader: boolean
+) {
   return new Promise((resolve, reject) => {
+    const json = JSON.parse(jsonString);
     stringify(
       json,
       { header: hasHeader, columns: Object.keys(json[0]) },
