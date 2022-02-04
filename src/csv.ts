@@ -50,6 +50,7 @@ export async function json2csv(params: json2csvParams) {
       for (let i = 1; i < params.keys.length; i++) {
         children = params.keys[i] ? children[params.keys[i]] : children;
       }
+      children = !children.length ? [children] : children;
       console.info(`count: ${children.length}`);
 
       const columns = Object.keys(children[0]);
