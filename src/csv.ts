@@ -46,16 +46,24 @@ export async function json2csv(params: json2csvParams) {
   return new Promise((resolve, reject) => {
     try {
       const json = JSON.parse(params.jsonString);
-      let child = params.keys[0] ? json[params.keys[0]] : [];
+      let children = params.keys[0] ? json[params.keys[0]] : [];
       for (let i = 1; i < params.keys.length; i++) {
-        child = params.keys[i] ? child[params.keys[i]] : child;
+        children = params.keys[i] ? children[params.keys[i]] : children;
       }
-      const columns = Object.keys(child[0]);
-      console.info(`count: ${child.length}`);
+      console.info(`count: ${children.length}`);
+
+      const columns = Object.keys(children[0]);
+      for (const child of children) {
+        Object.keys(child).forEach((key) => {
+          if (!columns.includes(key)) {
+            columns.push(key);
+          }
+        });
+      }
 
       const dest = fs.createWriteStream(params.csvFile, params.charCode);
       const src = stringify(
-        child,
+        children,
         {
           header: params.hasHeader,
           columns: columns,
