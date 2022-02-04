@@ -4,12 +4,14 @@
  */
 import xml2js from 'xml2js';
 
+const parser = new xml2js.Parser({ explicitArray: false });
+const builder = new xml2js.Builder();
 /**
  * @name json2xml
  * @description convert JSON to XML
  */
 export const json2xml = (json: any): string => {
-  return new xml2js.Builder().buildObject(json);
+  return builder.buildObject(json);
 };
 
 /**
@@ -18,7 +20,7 @@ export const json2xml = (json: any): string => {
  */
 export async function xml2json(xml: any) {
   return new Promise((resolve, reject) => {
-    xml2js.parseString(xml, (err, ret) => {
+    parser.parseString(xml, (err: any, ret: any) => {
       if (err) {
         reject(err);
       }
