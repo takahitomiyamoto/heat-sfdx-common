@@ -12,6 +12,7 @@ import { parse } from 'csv-parse';
  * @description json2csvParams
  * @param jsonString JSON string
  * @param csvFile CSV file name
+ * @param columns comma separated header columns (ex. apexClass,enabled)
  * @param charCode 'utf8', 'Shift_JIS', etc.
  * @param hasHeader set true if the csv has a header
  * @param keys JSON keys: ['Profile', 'applicationVisibilities'] etc.
@@ -19,6 +20,7 @@ import { parse } from 'csv-parse';
 type json2csvParams = {
   jsonString: string;
   csvFile: string;
+  columns: string;
   charCode: BufferEncoding;
   hasHeader: boolean;
   keys: string[];
@@ -53,13 +55,18 @@ export async function json2csv(params: json2csvParams) {
       children = !children.length ? [children] : children;
       console.info(`count: ${children.length}`);
 
-      const columns = Object.keys(children[0]);
-      for (const child of children) {
-        Object.keys(child).forEach((key) => {
-          if (!columns.includes(key)) {
-            columns.push(key);
-          }
-        });
+      let columns: string[] = [];
+      if (!params.columns) {
+        columns = Object.keys(children[0]);
+        for (const child of children) {
+          Object.keys(child).forEach((key) => {
+            if (!columns.includes(key)) {
+              columns.push(key);
+            }
+          });
+        }
+      } else {
+        columns = params.columns.split(',');
       }
 
       const dest = fs.createWriteStream(params.csvFile, params.charCode);
