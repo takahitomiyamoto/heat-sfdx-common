@@ -6,21 +6,25 @@ import fs from 'fs';
 import { stringify } from 'csv-stringify';
 import iconv from 'iconv-lite';
 import { parse } from 'csv-parse';
+import { readFileSyncUtf8 } from './fs';
 
 /**
  * @name json2csv
  * @description convert JSON to CSV
- * @param jsonString JSON string
+ * @param jsonName JSON file name
  * @param csvName CSV file name
  * @param hasHeader set true if the csv has a header
  */
 export async function json2csv(
-  jsonString: string,
+  jsonName: string,
   csvName: string,
   hasHeader: boolean
 ) {
   return new Promise((resolve, reject) => {
+    const jsonString = readFileSyncUtf8(jsonName);
     const json = JSON.parse(jsonString);
+    console.info(`count: ${json.length}`);
+
     stringify(
       json,
       { header: hasHeader, columns: Object.keys(json[0]) },
@@ -31,7 +35,6 @@ export async function json2csv(
         resolve(ret);
       }
     ).pipe(fs.createWriteStream(csvName));
-    console.info(`count: ${json.length}`);
   });
 }
 
