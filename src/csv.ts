@@ -86,7 +86,10 @@ export async function json2csv(params: json2csvParams) {
       src.pipe(dest);
 
       if (params.verbose) {
-        console.info(`size: ${children.length}`);
+        console.info(`total size: ${children.length}`);
+        if (2000 <= children.length) {
+          console.error(`This number of records may be more than 2000.`);
+        }
       }
 
       resolve(src);
