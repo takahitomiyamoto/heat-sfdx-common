@@ -24,6 +24,7 @@ type json2csvParams = {
   charCode: BufferEncoding;
   hasHeader: boolean;
   keys: string[];
+  verbose: boolean;
 };
 
 /**
@@ -53,7 +54,6 @@ export async function json2csv(params: json2csvParams) {
         children = params.keys[i] ? children[params.keys[i]] : children;
       }
       children = !children.length ? [children] : children;
-      console.info(`count: ${children.length}`);
 
       let columns: string[] = [];
       if (!params.columns) {
@@ -84,6 +84,8 @@ export async function json2csv(params: json2csvParams) {
         }
       );
       src.pipe(dest);
+
+      resolve(children.length);
     } catch (err) {
       reject(err);
     }
