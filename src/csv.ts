@@ -55,10 +55,6 @@ export async function json2csv(params: json2csvParams) {
       }
       children = !children.length ? [children] : children;
 
-      if (params.verbose) {
-        console.info(`input size: ${children.length}`);
-      }
-
       let columns: string[] = [];
       if (!params.columns) {
         columns = Object.keys(children[0]);
@@ -89,7 +85,11 @@ export async function json2csv(params: json2csvParams) {
       );
       src.pipe(dest);
 
-      resolve(children.length);
+      if (params.verbose) {
+        console.info(`size: ${children.length}`);
+      }
+
+      resolve(src);
     } catch (err) {
       reject(err);
     }
